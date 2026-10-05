@@ -1,7 +1,3 @@
-// Catálogo de la tienda «Lo quieres, te lo vendo».
-// En un proyecto real estos datos vendrían de una API; aquí van en un archivo
-// para que la clase se concentre en las rutas y no en el backend.
-
 export const productos = [
   {
     id: 1,
