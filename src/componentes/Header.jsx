@@ -1,0 +1,29 @@
+import { useState } from 'react'
+import { NavLink } from 'react-router'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+
+export default function Header() {
+    const [abierta, setAbierta] = useState(false)
+    const cerrar = () => setAbierta(false)
+
+   return (
+    <>
+        <Navbar expand="lg" bg="dark" data-bs-theme="dark" sticky="top" expanded={abierta} onToggle={setAbierta}>
+            <Container>
+                <Navbar.Brand as={NavLink} to="/" onClick={cerrar}>Lo quieres, te lo vendo</Navbar.Brand>
+                <Navbar.Toggle aria-controls="menu-principal" />
+                <Navbar.Collapse id="menu-principal">
+                <Nav className="ms-auto">
+                    <Nav.Link as={NavLink} to="/" end onClick={cerrar}>Inicio</Nav.Link>
+                    <Nav.Link as={NavLink} to="/catalogo" onClick={cerrar}>Catálogo</Nav.Link>
+                    <Nav.Link as={NavLink} to="/nosotros" onClick={cerrar}>Nosotros</Nav.Link>
+                </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+
+    </>
+   )
+}
