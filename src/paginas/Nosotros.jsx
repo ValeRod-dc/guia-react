@@ -3,7 +3,7 @@ export default function Nosotros() {
     <>
       <h1 className="h3">Nosotros</h1>
       <p>
-        Tienda en línea del Equipo 1 para la asignatura Desarrollo Fullstack II.
+        Tienda en línea de Valeria Rodríguez para la asignatura Desarrollo Fullstack II.
       </p>
     </>
   )

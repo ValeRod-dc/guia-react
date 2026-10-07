@@ -4,7 +4,12 @@ import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
-export default function TarjetaProducto({ producto, onVerDetalle }) {
+export default function TarjetaProducto({ producto }) {
+ 
+  const agregarAlCarrito = () => {
+    // aún no hace nada sto:b
+  }
+  
   return (
     <Card className="h-100 shadow-sm">
       <Card.Body className="d-flex flex-column">
@@ -24,8 +29,12 @@ export default function TarjetaProducto({ producto, onVerDetalle }) {
           {formatearPrecio(producto.precio)}
         </Card.Text>
 
-        <div className="mt-auto d-grid">
-          <Link to={`/producto/${producto.id}`} className="btn btn-outline-primary mt-auto">Ver detalle </Link>
+        <div className="mt-auto d-flex flex-column flex-sm-row gap-2">
+          <Button className='flex-fill' variant={producto.stock === 0 ? 'secondary' : 'primary'} onClick={agregarAlCarrito} disabled={producto.stock === 0}>
+            {producto.stock === 0 ? 'No disponible' : 'Agregar al carrito'}
+          </Button>
+          <Link to={`/producto/${producto.id}`} className="btn btn-outline-primary flex-fill">Ver detalle </Link>
+
         </div>
       </Card.Body>
     </Card>

@@ -19,6 +19,8 @@ export default function Header() {
                     <Nav.Link as={NavLink} to="/" end onClick={cerrar}>Inicio</Nav.Link>
                     <Nav.Link as={NavLink} to="/catalogo" onClick={cerrar}>Catálogo</Nav.Link>
                     <Nav.Link as={NavLink} to="/nosotros" onClick={cerrar}>Nosotros</Nav.Link>
+                    <Nav.Link as={NavLink} to="/contacto" onClick={cerrar}>Contacto</Nav.Link>
+                    <Nav.Link as={NavLink} to="/carrito" onClick={cerrar}>Carrito</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>

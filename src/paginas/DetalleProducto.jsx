@@ -16,6 +16,10 @@ export default function DetalleProducto() {
         )
     }
 
+    const agregarAlCarrito = () => {
+        // aún no hace nada :b
+    }
+
     return (
         <>
             <Button variant="outline-secondary" className="mb-3" onClick={() => navegar(-1)}>Volver</Button>
@@ -25,10 +29,17 @@ export default function DetalleProducto() {
             <p>{producto.descripcion}</p>
             <p className="fw-semibold fs-5">{formatearPrecio(producto.precio)}</p>
             <p className="text-muted">
-                {producto.stock > 0
-                ? `${producto.stock} unidades disponibles`
-                : 'Sin stock'}
+                {producto.stock > 0 ? `${producto.stock} unidades disponibles` : 'Sin stock'}
             </p>
+
+            <div className='d-flex gap-2 mt-3'>
+                <Button className='gap-2' variant={producto.stock === 0 ? 'secondary' : 'primary'} onClick={agregarAlCarrito} disabled={producto.stock === 0}>
+                    {producto.stock === 0 ? 'No disponible' : 'Agregar al carrito'}
+                </Button>
+                <Button variant='outline-secondary' onClick={() => navegar('/catalogo')}>
+                    Seguir comprando
+                </Button>
+            </div>
         </>
     )
 }
